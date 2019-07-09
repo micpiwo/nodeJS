@@ -8,11 +8,12 @@ router.get("/listes", async (req, res, next) => {
     /*Test de requete read*/
 try {
     const smoothie = await Smoothie.find({});
-    console.log(smoothie);
-    res.send(smoothie);
-    /*Sinon erreur*/
-    res.render('listes' + req.smoothie.title);
 
+
+    /*Sinon erreur*/
+    /*test de la page liste .pug*/
+    /*res.render('listes', {'mapage': smoothie});*/
+    res.send(smoothie);
 
 } catch (err) {
     console.log(err);
