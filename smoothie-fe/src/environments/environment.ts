@@ -5,7 +5,7 @@
 export const environment = {
   production: false,
   /*Connexion en entre font => angular et back nodeJs MongoDB*/
-  apiUrl: 'http//localhost:3000'
+  apiUrl: 'http://localhost:3000'
 
 };
 

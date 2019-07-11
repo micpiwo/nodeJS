@@ -14,27 +14,32 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {MatIconModule} from '@angular/material/icon';
 import {MatCardModule} from '@angular/material/card';
 import { SmoothiesComponent } from './smoothies/smoothies.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { DetailComponent } from './detail/detail.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     DashboardComponent,
     NavbarComponent,
-    SmoothiesComponent
+    SmoothiesComponent,
+    DetailComponent
   ],
   imports: [
     BrowserModule,
+    HttpClientModule,
+    BrowserAnimationsModule,
     AppRoutingModule,
+    // composant material
     FormsModule,
     MatInputModule,
-    BrowserAnimationsModule,
     MatButtonModule,
     MatCheckboxModule,
     MatGridListModule,
     MatToolbarModule,
     MatIconModule,
-    MatCardModule
+    MatCardModule,
+   
   ],
   providers: [],
   bootstrap: [AppComponent]

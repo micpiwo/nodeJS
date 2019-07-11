@@ -22,8 +22,8 @@ body{
 }
 
 /*PAGE SMOOTHIE*/
-.smoothie-conten{
-  padding: 20px!important;
+.smoothie-content{
+ height: 100%;
 }
 
 .text-under-header{
@@ -42,6 +42,13 @@ body{
     font-size: 100px;
     text-align: center;
     font-family: 'Freckle Face', cursive;
+}
+
+.img-smoothie{
+  height: 300px!important;
+  width: 300px!important;
+  position: relative;
+  left:7%;
 }
 
 
