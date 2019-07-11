@@ -14,6 +14,7 @@ const cors = require('cors');
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var catalogueRouter = require('./api/catalogue');
+var usersRouter = require('./api/users');
 
 var app = express();
 /*Init lib cors pour un dev local = options de securité*/
@@ -55,7 +56,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/smoothie', catalogueRouter);
-
+app.use('/smoothie', usersRouter);
 // catch 404 page non trouvée
 app.use(function(req, res, next) {
   next(createError(404));

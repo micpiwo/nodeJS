@@ -3,7 +3,10 @@
 // The list of file replacements can be found in `angular.json`.
 
 export const environment = {
-  production: false
+  production: false,
+  /*Connexion en entre font => angular et back nodeJs MongoDB*/
+  apiUrl: 'http//localhost:3000'
+
 };
 
 /*

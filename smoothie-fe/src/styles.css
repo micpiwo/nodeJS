@@ -1,1 +1,53 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import url('https://fonts.googleapis.com/css?family=Fascinate|Freckle+Face|Pinyon+Script&display=swap');
+html{
+  box-sizing: content-box;
+  margin: 0;
+  padding: 0;
+  height: 100%;
+}
+body{
+  margin: 20px;
+}
+
+.example-form {
+  min-width: 150px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.example-full-width {
+  width: 100%;
+  padding: 20px;
+}
+
+/*PAGE SMOOTHIE*/
+.smoothie-conten{
+  padding: 20px!important;
+}
+
+.text-under-header{
+  position: absolute;
+    top: 25%;
+    left: 25%;
+    text-align: center;
+    color: brown;
+    font-size: 100px;
+    font-family: 'Freckle Face', cursive;
+}
+.text-under-header-sub{
+  position: absolute;
+    top: 40%;
+    color: rgb(165, 97, 42);
+    font-size: 100px;
+    text-align: center;
+    font-family: 'Freckle Face', cursive;
+}
+
+
+
+
+
+
+
+
