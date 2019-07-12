@@ -16,9 +16,7 @@ export class DetailComponent implements OnInit {
 
   ngOnInit() {
     const smoothieId = this.route.snapshot.paramMap.get('id');
-    /*
    console.log(smoothieId);
-   */
   }
 
 }
