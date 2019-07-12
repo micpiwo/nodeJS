@@ -1,1 +1,94 @@
-<p>detail works!</p>
+
+<!--Appel du ngContainer en bas de page -->
+<ng-template #detail>
+        <mat-tab-group>
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon">tag_faces</mat-icon>
+                    LA RECETTE
+                  </ng-template>
+                  <mat-card class="example-card">
+                        <mat-card-header>
+                          <div mat-card-avatar class="example-header-image"></div>
+                          <mat-card-title> {{smoothie.title}}</mat-card-title>
+                        </mat-card-header>
+                        <img class="img-smoothie-id" mat-card-image src="assets/img/3.jpg" alt="Photo of a Shiba Inu">
+                        <mat-card-content>
+                        
+                            <p><b>Description :</b> {{smoothie.description}}</p>
+                            <p><b>Conseil :</b> {{smoothie.advice}}</p>
+                       
+                        </mat-card-content>
+                        <mat-card-actions>
+                            <a routerLink="home"><button mat-button color="accent">ACCUEIL</button></a>
+                        </mat-card-actions>
+                      </mat-card>
+                </mat-tab>
+              
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon" color="accent">redo</mat-icon>
+                    VOS BESOINS
+                  </ng-template>
+                  
+                  <div *ngFor="let ingredient of smoothie.ingredients">
+                      <hr>
+                        <ul>
+                            <li>{{ingredient.nom}}</li>
+                            <li>{{ingredient.quantite}}</li>
+                        </ul>
+                        
+                        <hr>
+                        
+                    </div>
+                </mat-tab>
+              
+                <mat-tab>
+                  <ng-template mat-tab-label>
+                    <mat-icon class="example-tab-icon" color="warn">sentiment_very_dissatisfied</mat-icon>
+                    PRIX ET TEMPS
+                  </ng-template>
+              
+                  <div *ngFor="let feature of smoothie.features">
+                        <hr>
+                          <ul>
+                              <li>{{feature.cost}}</li>
+                              <li>{{feature.prepareTime}}</li>
+                          </ul>
+                          
+                          <hr>
+                          
+                      </div>
+                </mat-tab>
+
+                <mat-tab>
+                        <ng-template mat-tab-label>
+                          <mat-icon class="example-tab-icon" color="primary">free_breakfast</mat-icon>
+                          LES ÉTAPES
+                        </ng-template>
+                    
+                        <div *ngFor="let step of smoothie.steps">
+                              <hr>
+                                <ul>
+                                    <li>{{step.stepText}}</li>
+                                 
+                                </ul>
+                                
+                                <hr>
+                                
+                            </div>
+                      </mat-tab>
+              </mat-tab-group>
+</ng-template>
+<!--Si smoothie à une valeur => un contenu => appel #detail sinon rien -->
+<ng-container *ngTemplateOutlet="smoothie ?detail : '' "></ng-container>
+
+
+
+
+
+
+
+
+  
+

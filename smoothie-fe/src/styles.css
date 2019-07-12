@@ -51,6 +51,14 @@ body{
   left:7%;
 }
 
+/*PAge detail*/
+.img-smoothie-id{
+  height: 300px!important;
+  width: 300px!important;
+  position: relative;
+  left:1%;
+}
+
 
 
 

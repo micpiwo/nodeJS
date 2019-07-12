@@ -1,6 +1,7 @@
 var express = require("express");
 var router = express.Router();
 const Smoothie = require('../models/smoothie');
+const mongoose = require('mongoose');
 
 
 /* GET users listing. */
@@ -26,12 +27,11 @@ router.get("/listes/:id", async (req, res, next) => {
      
     /*Assignation de id request => paramètres + id*/
 
-    const id = req.params.id;
+    const id = mongoose.Types.ObjectId(req.params.id);
 
     try {
-        const smoothie = await Smoothie.findById({id});
+        const smoothie = await Smoothie.findById(mongoose.Types.ObjectId(req.params.id)).exec();
        
-        
         res.send(smoothie);
         console.log(smoothie(id));
         /*Sinon erreur*/       
@@ -39,6 +39,20 @@ router.get("/listes/:id", async (req, res, next) => {
         console.log(err);
         res.status(400).send(err);
     }
+    });
+
+    router.post('listes/ajouter', async (req, res, next) => {
+
+        let newSmoothie = new Smoothie();
+
+        newSmoothie.title = req.body.title;
+    
+        try {
+            const smoothie = await newSmoothie.save();
+            res.send(smoothie);
+        } catch(err) {
+            res.status(400).send(err);
+        }
     });
 
 module.exports = router;

@@ -8,6 +8,7 @@ import { HttpClient } from '@angular/common/http';
 
 
 
+
 /*INTERFACE en dehors de la classe*/
 /*Appel d'un smoothie*/
 export interface Smoothie {
@@ -55,11 +56,19 @@ export class SmoothieService {
   }
 
   getOneSmoothie(id: String): Observable<Smoothie> {
-    const getUrl = `${this.apiUrl}/smoothie/${id}`;
+    const getUrl = `${this.apiUrl}/smoothie/listes/${id}`;
     console.log(getUrl);
     return this.http.get<Smoothie>(getUrl);
   }
 
+
+  addSmoothie(smoothie: Smoothie) {
+    const addUrl = `${this.apiUrl}/smoothie/listes/ajouter`;
+    return this.http.post<Smoothie>(addUrl, smoothie);
+  }
+
 }
+
+
 
 

@@ -1,6 +1,7 @@
 
 import { Component, OnInit, Input } from '@angular/core';
 import { SmoothieService, Smoothie } from '../smoothie.service';
+
 @Component({
   selector: 'app-smoothies',
   templateUrl: './smoothies.component.html',

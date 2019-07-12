@@ -3,6 +3,9 @@ import { CommonModule } from '@angular/common';
 import { Routes, RouterModule } from '@angular/router';
 import {DashboardComponent} from './dashboard/dashboard.component';
 import { SmoothiesComponent } from './smoothies/smoothies.component';
+import { DetailComponent } from './detail/detail.component';
+import { UsersComponent } from './users/users.component';
+import { SmoothiesFormComponent } from './smoothies-form/smoothies-form.component';
 
 
 const routes: Routes = [
@@ -16,8 +19,16 @@ const routes: Routes = [
     component: SmoothiesComponent,
   },
   {
-    path: 'detail/id/:id',
-    component: SmoothiesComponent,
+    path: 'details/:id',
+    component: DetailComponent,
+  },
+  {
+    path: 'utilisateurs',
+    component: UsersComponent,
+  },
+  {
+    path: 'ajouterSmoothie',
+    component: SmoothiesFormComponent,
   },
 
 ];
