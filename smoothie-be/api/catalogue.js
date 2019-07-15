@@ -41,15 +41,18 @@ router.get("/listes/:id", async (req, res, next) => {
     }
     });
 
-    router.post('listes/ajouter', async (req, res, next) => {
+    router.post('/listes/ajouter', async (req, res, next) => {
+
+    
 
         let newSmoothie = new Smoothie();
-
         newSmoothie.title = req.body.title;
     
         try {
             const smoothie = await newSmoothie.save();
+            console.log(smoothie);
             res.send(smoothie);
+            console.log('arrivee dans la route ajouter : ', req.body);
         } catch(err) {
             res.status(400).send(err);
         }

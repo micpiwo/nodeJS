@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const smoothieSchema = mongoose.Schema({
     title: {
         type: String,
-        require: false,
+        required: false,
 
     },
     ingredients: [
