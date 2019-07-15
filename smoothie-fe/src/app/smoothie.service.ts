@@ -63,9 +63,10 @@ export class SmoothieService {
 
 
   addSmoothieService(smoothie: Smoothie) {
-    console.log(smoothie.title);
+    
     const addUrl = `${this.apiUrl}/smoothie/listes/ajouter`;
-    return this.http.post<Smoothie>(addUrl, smoothie);
+    console.log(smoothie);
+    return this.http.post<Smoothie>(addUrl, smoothie); 
   
   }
 

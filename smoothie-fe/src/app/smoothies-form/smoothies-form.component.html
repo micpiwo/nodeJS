@@ -1,23 +1,22 @@
 <div>
-    <!--Appel de la fonction formGroup depuis le fichier.ts et la fonction submit-->
-        <form [formGroup]="smoothieForm" (ngSubmit)="onSubmit()" >
-          <div class="content p-24">
-      
-            <!-- name: Le nom du groupe -->
-            <mat-form-field class="full-width">
-                <!--Vas chercher l'attirbut title depui le .ts (ajouter les autres objet de la collection-->
-              <input matInput
-                     placeholder="Titre de la recette"
-                     
-                     formControlName="title"
-              />
-              <!--personnalisation du message d'erreur -->
-              <mat-error *ngIf="myForm.title.hasError('required')" >
-                Le titre est obligatoire
-              </mat-error>
-            </mat-form-field>
-            <div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="center center">
-              <button mat-stroked-button color="primary">Créer</button>
-            </div>
-      </div>
+  <form [formGroup]="smoothieForm" (ngSubmit)="onSubmit()" >
+    <div class="content p-24">
+
+      <!-- name: Le nom du groupe -->
+      <mat-form-field class="full-width">
+        <input matInput
+               placeholder="Titre de la recette"
+               formControlName="title" required
+        />
+        <mat-error *ngIf="myForm.title.hasError('required')" >
+          Le titre est obligatoire
+        </mat-error>
+      </mat-form-field>
+        <div class="p-8 pt-0" fxLayout="row" fxLayoutAlign="center center">
+          <button mat-stroked-button color="primary">Créer</button>
+        </div>
+    </div>
+    </form>
+    {{this.title.values | json}}
+</div>
 

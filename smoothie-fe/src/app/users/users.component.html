@@ -1,1 +1,41 @@
-<p>users works!</p>
+<mat-grid-list cols="3" class="users-content" gutterSize="40px" >
+    <mat-grid-tile *ngFor="let user of users" rowHeight="1:1">
+      <mat-card class="example-card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>
+
+                <div >
+                    
+                    <div style="text-align: center">
+                            <img class="img-users" mat-card-image src="{{ user.picture }}" style="width: 32px; height:32px">
+                    </div>
+                  
+                        <hr>
+                          <ul>
+                              <li><b>Nom :</b> {{user.name[0].first}}</li>
+                              <li><b>Prénom :</b> {{user.name[0].last}}</li>
+                              <li><b>Age :</b> {{user.age}} ans</li>
+                              <li><b>Couleur des yeux :</b>{{user.eyeColor}}</li>
+                              <li><b>Entreprise :</b> {{user.company}}</li>
+                              <li><b>Email :</b> {{user.email}}</li>
+                              <li><b>Téléphone :</b> {{user.phone}}</li>
+                              <li><b>Adresse :</b> {{user.address}}</li>
+                          </ul>
+                          
+                          <hr>
+                          
+                      </div>
+          </mat-card-title>
+        </mat-card-header>
+        
+        <mat-card-actions>
+        <div style="text-align: center">
+          <a routerLink="home"><button mat-raised-button color="warn">Ajouter un utilisateur</button></a>
+          <br /><br />
+          <button mat-raised-button color="accent" routerLink="/userDetails/{{user._id}}">Détail de l'utilisateurs</button>
+        </div>
+        </mat-card-actions>
+      </mat-card>
+    </mat-grid-tile>
+</mat-grid-list>

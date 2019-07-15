@@ -20,6 +20,8 @@ import {MatTabsModule} from '@angular/material/tabs';
 import { UsersComponent } from './users/users.component';
 import { SmoothiesFormComponent } from './smoothies-form/smoothies-form.component';
 import {MatFormFieldModule} from '@angular/material/form-field';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UsersFormComponent } from './users-form/users-form.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -28,7 +30,9 @@ import {MatFormFieldModule} from '@angular/material/form-field';
     SmoothiesComponent,
     DetailComponent,
     UsersComponent,
-    SmoothiesFormComponent
+    SmoothiesFormComponent,
+    UserDetailsComponent,
+    UsersFormComponent
   ],
   imports: [
     BrowserModule,

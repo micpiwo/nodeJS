@@ -6,6 +6,8 @@ import { SmoothiesComponent } from './smoothies/smoothies.component';
 import { DetailComponent } from './detail/detail.component';
 import { UsersComponent } from './users/users.component';
 import { SmoothiesFormComponent } from './smoothies-form/smoothies-form.component';
+import { UserDetailsComponent } from './user-details/user-details.component';
+import { UsersFormComponent } from './users-form/users-form.component';
 
 
 const routes: Routes = [
@@ -27,8 +29,16 @@ const routes: Routes = [
     component: UsersComponent,
   },
   {
+    path: 'userDetails/:id',
+    component: UserDetailsComponent,
+  },
+  {
     path: 'ajouterSmoothie',
     component: SmoothiesFormComponent,
+  },
+  {
+    path: 'ajouterUtilisateurs',
+    component: UsersFormComponent,
   },
 
 ];

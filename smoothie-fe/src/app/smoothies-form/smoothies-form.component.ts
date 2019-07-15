@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { SmoothieService, Smoothie } from '../smoothie.service';
-import { FormBuilder, FormGroup,Validators, FormControl } from '@angular/forms';
+import { FormBuilder, FormGroup, Validators, FormControl, FormArray } from '@angular/forms';
 
 
 @Component({
@@ -9,8 +9,10 @@ import { FormBuilder, FormGroup,Validators, FormControl } from '@angular/forms';
   styleUrls: ['./smoothies-form.component.css']
 })
 export class SmoothiesFormComponent implements OnInit {
+
+  title = new FormControl();
   //Ajout des valeurs de la collections
-  smoothie: Smoothie = {
+  public smoothie: Smoothie = {
     title: '',
     ingredients: [
       {
@@ -34,15 +36,18 @@ export class SmoothiesFormComponent implements OnInit {
     };
 //Init du form group => valeurs et validation de form control instance
 //A appeler dans le form html
-  smoothieForm: FormGroup;
 
+  
   constructor(
     private smoothieService: SmoothieService,
-    private fb: FormBuilder
+    private fb: FormBuilder,
   ) { }
+  smoothieForm: FormGroup;
 //Appel des fonction du bas
   ngOnInit() {
+    
     this.getAllSmoothies();
+    //Appel de la fonction buildForm
     this.buildForm();
   }
 
@@ -54,7 +59,7 @@ export class SmoothiesFormComponent implements OnInit {
   }
 
   get smoothies(){
-    return this.smoothie;
+    return this.smoothie.title;
   }
 
   get myForm() {
@@ -73,32 +78,31 @@ export class SmoothiesFormComponent implements OnInit {
   }
 
   //constriction du form
-  private buildForm() {
+  public buildForm() {
     this.smoothieForm = this.fb.group({
       hideRequired: false,
       floatLabel: 'auto',
-      title: ['', Validators.required],
+      title: ['', Validators.required]
     });
   }
 
 
-  onSubmit() {
+  public onSubmit(smoothies: Smoothie) {
     // stop here if form is invalid
     if (this.smoothieForm.invalid) {
       return;
     } else {
       this.smoothie.title = this.myForm.title.value;
       this.addSmoothie(this.smoothie);
-      // console.log(this.smoothie);
     }
   }
 
-  addSmoothie(smoothies: Smoothie) {
+  addSmoothie(smoothie: Smoothie) {
     //Appel du services
-    this.smoothieService.addSmoothieService(smoothies)
+    this.smoothieService.addSmoothieService(smoothie)
       .subscribe( (lastInsertSmoothie) => {
         console.log('smoothie inséré', lastInsertSmoothie);
-        console.log(this.smoothies.title);
+    
       });
   }
 }
